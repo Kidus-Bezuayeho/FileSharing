@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Sharing Site</title>
+    <style>
+        body, h1, h2, h3, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: grey;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .file-upload {
+            margin-bottom: 20px;
+        }
+        button, input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover, input[type="submit"]:hover {
+            background-color: #555;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style the logout button */
+        .logout-btn {
+            background-color: #ff4d4d;
+        }
+
+        .logout-btn:hover {
+            background-color: #ff0000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <?php include 'list_files.php'; ?>
+    <div class="container">
+        <h3>Upload a File</h3>
+        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
+            <label for="userfile">Select file to upload:</label>
+            <input type="file" name="userfile" id="userfile">
+            <br>
+            <input type="submit" value="Upload File" name="submit">
+        </form>
+    </div>
+</body>
+</html>
